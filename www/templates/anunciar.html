@@ -1,0 +1,103 @@
+<ion-view view-title="Anunciate">
+  <ion-content class="padding">
+
+
+
+
+<div class="card">
+  <div class="item item-text-wrap item-icon-left">
+  <i class="icon ion-home"></i>Registra tu hostal en el porta, solo tienes que contestar las siguientes preguntas!
+
+
+
+  </div>
+</div>
+
+<div class="card" ng-show="err">
+  <div class="item item-text-wrap ">
+                    <div class="alert alert-danger" role="alert" ng-show="err">{{err}}</div>
+  </div>
+</div>
+
+<div class="card" ng-show="err1">
+  <div class="item item-text-wrap ">
+                     <div class="alert alert-danger" role="alert" ng-show="err1">{{err1}}</div>
+  </div>
+</div>
+
+<div class="card" ng-show="succes">
+  <div class="item item-text-wrap">
+                      <div class="alert alert-success" role="alert" ng-show="succes">{{succes}}</div>
+
+  </div>
+</div>
+
+
+<div class="list">
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Nombre del hostal</span>
+    <input type="text" ng-model="nombreHostal" placeholder="Escribe el nombre">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Descripción</span>
+    <input type="text" ng-model="descripcion" placeholder="Escribe la descripción">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Dirección</span>
+    <input type="text" ng-model="direccion" placeholder="Escribe la dirección">
+  </label>
+    <label class="item item-input item-stacked-label">
+    <span class="input-label">Número de télefono:</span>
+    <input type="text" ng-model="telefono" placeholder="Escribe el número de télefono">
+  </label>
+    <label class="item item-input item-stacked-label">
+    <span class="input-label">Email</span>
+    <input type="text" ng-model="aas" placeholder="Escribe el correo electronico">
+  </label>
+    <label class="item item-input item-stacked-label">
+    <span class="input-label">Página Web</span>
+    <input type="text" ng-model="web" placeholder="Escribe el sitio web o facebook">
+  </label>
+    <label class="item item-input item-stacked-label">
+    <span class="input-label">Nombre del representante</span>
+    <input type="text" ng-model="gerente" placeholder="Escribe del representante">
+  </label>
+    <label class="item item-input item-stacked-label">
+    <span class="input-label">Giro</span>
+                    <select ng-model="giro" class="form-control">
+                       <option value="Hostal">Hostal</option>
+                       <option value="Hostal y Restaurante">Hostal y Restaurante</option>
+                       <option value="Hotel">Hotel</option>
+                   </select>
+  </label>
+     <label class="item item-input item-stacked-label">
+    <span class="input-label">Mensaje</span>
+    <textarea ng-model="mensaje" placeholder="Comentarios"></textarea>
+  </label>
+</div>
+
+<div class="card" ng-show="err">
+  <div class="item item-text-wrap ">
+                    <div class="alert alert-danger" role="alert" ng-show="err">{{err}}</div>
+  </div>
+</div>
+
+<div class="card" ng-show="err1">
+  <div class="item item-text-wrap ">
+                     <div class="alert alert-danger" role="alert" ng-show="err1">{{err1}}</div>
+  </div>
+</div>
+
+<div class="card" ng-show="succes">
+  <div class="item item-text-wrap">
+         <div class="alert alert-success" role="alert" ng-show="succes">{{succes}}</div>
+
+  </div>
+</div>
+
+<button ng-click="anunciar(nombreHostal,descripcion,direccion,telefono,aas,gerente,web,mensaje)" class="button button-full button-positive">
+  Enviar petición
+</button>
+
+  </ion-content>
+</ion-view>

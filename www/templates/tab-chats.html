@@ -1,0 +1,19 @@
+<ion-view view-title="Directorio">
+  <ion-content>
+      <div  ng-hide="elementos">
+                    <i class="full-image fa fa-refresh fa-spin fa-5x fa-fw"></i>
+      </div>
+<div class="list" ng-show="elementos">
+
+    <a ng-repeat="elemento in elementos" class="item item-thumbnail-left" href="#/detalle/{{elemento.idhostales}}">
+      <img  ng-src="{{elemento.imagenCuadrado}}">
+      <h2>{{elemento.nombre}}</h2>
+       <p><strong>Giro:</strong> {{elemento.giro}}</p>
+       <p><strong>Correo:</strong> {{elemento.email}}</p>
+       <p><strong>Telefono:</strong> {{elemento.telefono}}</p>
+       <p><strong>Pagina web:</strong> {{elemento.pagina}}</p>
+    </a>
+
+</div>
+  </ion-content>
+</ion-view>

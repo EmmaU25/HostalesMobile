@@ -1,0 +1,77 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="{{hostal.nombre}}">
+  <ion-content class="padding">
+
+       <div  ng-hide="hostal">
+                    <i class="full-image fa fa-refresh fa-spin fa-5x fa-fw"></i>
+      </div>
+<div class="list card" ng-show="hostal">
+
+  <div class="item item-avatar">
+    <img ng-src="{{hostal.imagenCuadrado}}">
+    <h2>{{hostal.nombre}}</h2>
+    <p>{{hostal.descripcion}}</p>
+  </div>
+
+  <div class="item item-image">
+    <img ng-src="{{hostal.imagen}}">
+  </div>
+   <div class="item item-body">
+  <p><strong>Direccion:</strong> {{hostal.direccion}}</p>
+  <p><strong>Telefono:</strong> {{hostal.telefono}}</p>
+  </div>
+<div class="card">
+  <div class="item item-divider">
+   <strong>Cuartos</strong>
+  </div>
+</div>
+<ul class="list">
+    <li class="item" ng-repeat="cuarto in cuartos">
+     {{cuarto.nombre}}
+    </li>
+</ul>
+
+
+  <a class="item item-icon-left assertive" href="#/tab/reservar/{{hostal.idhostales}}">
+    <i class="icon ion-android-send"></i>
+    RESERVAR
+  </a>
+  
+</div>
+       <div  ng-hide="comen">
+                    <i class="full-image fa fa-refresh fa-spin fa-4x fa-fw"></i>
+      </div>
+<div class="item item-avatar" ng-repeat="co in comen" ng-show="comen">
+    <img class="media-object" width="80" src="imagen/avatar.png" alt="...">
+    <p class="media-heading"><strong> {{co.fecha | date:'MM/dd/yyyy @ h:mma'}} {{co.nombre}} dijo: </strong> </p>
+   <p >{{co.comentario | limitTo: 200}} {{productos.descripcion.length>200 ? '...' : ''}}</p>
+   <button ng-show="{{productos.descripcion.length>200}}">Leer mas</button>
+</div>
+
+<div class="list list-inset">
+<p>Comentarios</p>
+  <label class="item item-input">
+    <input type="text" placeholder="Nombre" ng-model="nombre">
+  </label>
+  <label class="item item-input">
+   <textarea placeholder="Comentario" rows="4" cols="10" MAXLENGTH="144" ng-model="comentario"></textarea>
+  </label>
+ <button class="button button-block button-calm" ng-click="comentar(nombre,comentario)">
+ Comentar
+</button>
+<div ng-show="asa" ng-click="asa=NULL" class="alert alert-success" role="alert"><strong>{{asa}}</strong></div>
+<div ng-show="err" ng-click="err=NULL" class="alert alert-danger" role="alert"><strong>{{err}}</strong></div>  
+</div>
+  </ion-content>
+</ion-view>

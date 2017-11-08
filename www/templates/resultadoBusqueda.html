@@ -1,0 +1,14 @@
+<ion-view view-title="Busqueda">
+		<ion-content class="padding">
+		<h4><small>Los resultados de la busqueda <strong> {{ palabra }}</strong> son {{numeroRow}} </small></h4>
+		<div class="list" ng-repeat="d in data">
+
+		    	<a class="item item-thumbnail-left" href="#/tab/detalle/{{d.idhostales}}">
+		      	<img src="{{d.imagen}}">
+		      	<h2>{{d.nombre}}</h2>
+		      	<p>{{d.descripcion | limitTo:50}}</p>
+		    	</a>
+
+		</div>
+		</ion-content>
+</ion-view>
